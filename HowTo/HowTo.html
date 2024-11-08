@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To...</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .category-link, .article-link {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .category-link:hover, .article-link:hover {
+            background-color: #e0e0e0;
+        }
+
+        .motivation {
+            margin: 20px 0;
+            font-style: italic;
+            color: #666;
+        }
+
+        /* Estilos para subpáginas */
+        .back-button, .home-button {
+            display: inline-block;
+            color: #333;
+            text-decoration: none;
+            padding: 5px 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        .back-button:hover, .home-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .category h2 {
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .explanation {
+            padding: 10px;
+            border-left: 4px solid #333;
+            background-color: #f9f9f9;
+            margin-top: 10px;
+            border-radius: 3px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Página principal -->
+    <div id="home" class="container">
+        <header>
+            <h1>How To...</h1>
+            <p>Descubre el funcionamiento de las cosas con explicaciones simples y rápidas</p>
+        </header>
+
+        <!-- Frases de motivación -->
+        <div class="motivation">¿Alguna vez te has preguntado cómo funcionan las cosas? Esta es tu web.</div>
+        <div class="motivation">Aprender es fácil si lo haces paso a paso.</div>
+        <div class="motivation">Con nuestras guías prácticas, lo complicado se vuelve simple.</div>
+
+        <!-- Enlaces a categorías -->
+        <a href="#ciencia" class="category-link" onclick="goToCategory('ciencia')">Ciencia</a>
+        <a href="#naturaleza" class="category-link" onclick="goToCategory('naturaleza')">Naturaleza</a>
+        <a href="#hogar" class="category-link" onclick="goToCategory('hogar')">Hogar</a>
+    </div>
+
+    <!-- Subpáginas de Categoría -->
+    <div id="ciencia" class="container category" style="display:none;">
+        <a href="#" class="back-button" onclick="goBack()">⬅ Atrás</a>
+        <a href="#" class="home-button" onclick="goHome()">🏠 Inicio</a>
+        <h2>Ciencia</h2>
+        <a href="#explicacion1" class="article-link" onclick="showExplanation('explicacion1')">¿Cómo funciona una batería?</a>
+        <a href="#explicacion2" class="article-link" onclick="showExplanation('explicacion2')">¿Qué es el ADN?</a>
+        <a href="#explicacion3" class="article-link" onclick="showExplanation('explicacion3')">¿Cómo se produce el sonido?</a>
+    </div>
+
+    <div id="naturaleza" class="container category" style="display:none;">
+        <a href="#" class="back-button" onclick="goBack()">⬅ Atrás</a>
+        <a href="#" class="home-button" onclick="goHome()">🏠 Inicio</a>
+        <h2>Naturaleza</h2>
+        <a href="#explicacion4" class="article-link" onclick="showExplanation('explicacion4')">¿Por qué cambian de color las hojas?</a>
+        <a href="#explicacion5" class="article-link" onclick="showExplanation('explicacion5')">¿Cómo respiran los peces?</a>
+        <a href="#explicacion6" class="article-link" onclick="showExplanation('explicacion6')">¿Qué es la fotosíntesis?</a>
+    </div>
+
+    <div id="hogar" class="container category" style="display:none;">
+        <a href="#" class="back-button" onclick="goBack()">⬅ Atrás</a>
+        <a href="#" class="home-button" onclick="goHome()">🏠 Inicio</a>
+        <h2>Hogar</h2>
+        <a href="#explicacion7" class="article-link" onclick="showExplanation('explicacion7')">¿Cómo limpiar vidrios fácilmente?</a>
+        <a href="#explicacion8" class="article-link" onclick="showExplanation('explicacion8')">¿Qué hacer si una puerta chirría?</a>
+        <a href="#explicacion9" class="article-link" onclick="showExplanation('explicacion9')">¿Cómo ahorrar energía en casa?</a>
+    </div>
+
+    <!-- Explicaciones de Artículos -->
+    <div id="explicacion1" class="container explanation" style="display:none;">
+        <a href="#" class="back-button" onclick="goBack()">⬅ Atrás</a>
+        <h2>¿Cómo funciona una batería?</h2>
+        <p>1. Una batería almacena energía química y la convierte en electricidad.</p>
+        <p>2. Lo hace a través de reacciones químicas entre sus materiales internos.</p>
+        <p>3. Esto permite alimentar dispositivos eléctricos.</p>
+    </div>
+
+    <div id="explicacion2" class="container explanation" style="display:none;">
+        <a href="#" class="back-button" onclick="goBack()">⬅ Atrás</a>
+        <h2>¿Qué es el ADN?</h2>
+        <p>1. El ADN contiene el código genético de todos los seres vivos.</p>
+        <p>2. Este código almacena las instrucciones para el desarrollo y funcionamiento del organismo.</p>
+        <p>3. Es la base de la herencia biológica.</p>
+    </div>
+
+    <!-- Aquí se colocarían las otras explicaciones de la misma forma -->
+
+    <script>
+        function goToCategory(category) {
+            // Oculta la página principal
+            document.getElementById('home').style.display = 'none';
+            // Muestra la categoría seleccionada
+            document.getElementById(category).style.display = 'block';
+        }
+
+        function goBack() {
+            // Regresa a la página principal o a la categoría
+            document.querySelectorAll('.container').forEach(container => container.style.display = 'none');
+            if (lastCategory) {
+                document.getElementById(lastCategory).style.display = 'block';
+            } else {
+                document.getElementById('home').style.display = 'block';
+            }
+        }
+
+        let lastCategory = null;
+
+        function showExplanation(explicationId) {
+            // Guarda la última categoría visitada
+            lastCategory = document.querySelector('.category[style*="block"]').id;
+            document.querySelectorAll('.container').forEach(container => container.style.display = 'none');
+            // Muestra la explicación seleccionada
+            document.getElementById(explicationId).style.display = 'block';
+        }
+
+        function goHome() {
+            document.querySelectorAll('.container').forEach(container => container.style.display = 'none');
+            document.getElementById('home').style.display = 'block';
+            lastCategory = null;
+        }
+    </script>
+</body>
+</html>
